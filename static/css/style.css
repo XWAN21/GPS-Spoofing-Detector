@@ -1,0 +1,326 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:#ffffff;
+    min-height:100vh;
+}
+
+header{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 60px;
+    background:#111827;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+main{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:60px 20px;
+}
+
+.hero,
+.info{
+    width:900px;
+    max-width:100%;
+    background:#1e293b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.hero{
+    text-align:center;
+    padding:60px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+button{
+    background:#2563eb;
+    color:#ffffff;
+    border:none;
+    border-radius:12px;
+    padding:18px 45px;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#3b82f6;
+    transform:translateY(-3px);
+}
+
+button:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.result{
+    width:900px;
+    max-width:100%;
+    margin-top:40px;
+    display:none;
+}
+
+.info{
+    padding:35px;
+    animation:fade .4s ease;
+}
+
+.info h2{
+    margin-bottom:25px;
+}
+
+.data-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-size:19px;
+}
+
+.data-row:last-child{
+    border-bottom:none;
+}
+
+.data-row span:first-child{
+    color:#cbd5e1;
+}
+
+.data-row span:last-child{
+    font-weight:bold;
+    color:#60a5fa;
+    text-align:right;
+}
+
+#mapSection{
+    width:900px;
+    max-width:100%;
+    margin-top:40px;
+    display:none;
+}
+
+#mapSection h2{
+    margin-bottom:20px;
+}
+
+#map{
+    width:100%;
+    height:500px;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+footer{
+    margin-top:60px;
+    padding:30px;
+    text-align:center;
+    color:#94a3b8;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+        padding:25px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero{
+        padding:35px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .data-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .data-row span:last-child{
+        text-align:left;
+    }
+
+    button{
+        width:100%;
+    }
+
+    #map{
+        height:350px;
+    }
+
+}
+/* ---------------- ПРОЦЕСС АНАЛИЗА ---------------- */
+
+.analysis-steps{
+
+    width:900px;
+
+    max-width:100%;
+
+    margin-top:30px;
+
+    display:none;
+
+}
+
+.step{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#1e293b;
+
+    margin-bottom:12px;
+
+    padding:18px 24px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-size:18px;
+
+}
+
+.step-name{
+
+    font-weight:bold;
+
+}
+
+.step-status{
+
+    color:#94a3b8;
+
+}
+
+.step.running .step-status{
+
+    color:#facc15;
+
+}
+
+.step.done .step-status{
+
+    color:#22c55e;
+
+}
+
+.step.error .step-status{
+
+    color:#ef4444;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#0f172a;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    margin-top:20px;
+
+}
+
+.progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:#2563eb;
+
+    transition:.4s;
+
+}

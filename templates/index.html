@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GPS Spoofing Detector</title>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        🛰 GPS Spoofing Detector
+
+    </div>
+
+    <nav>
+
+        <a href="/">Главная</a>
+
+        <a href="#result">Анализ</a>
+
+
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="hero">
+
+        <h1>
+
+            Система обнаружения подмены GPS
+
+        </h1>
+
+        <p>
+
+            Учебная система анализа достоверности геолокации.
+            Выполняется сравнение GPS-координат устройства,
+            IP-геолокации пользователя и рассчитывается Trust Score.
+
+        </p>
+
+        <button id="gpsButton">
+
+            Начать анализ
+
+        </button>
+
+    </section>
+
+    <section id="result" class="result"></section>
+
+    <section id="comparisonSection" class="result"></section>
+    <section id="analysisSteps" class="analysis-steps">
+
+    <div class="step" id="step1">
+        <span class="step-name">📍 Получение GPS</span>
+        <span class="step-status">Ожидание</span>
+    </div>
+
+    <div class="step" id="step2">
+        <span class="step-name">📊 Серия измерений</span>
+        <span class="step-status">Ожидание</span>
+    </div>
+
+    <div class="step" id="step3">
+        <span class="step-name">🧮 Анализ стабильности</span>
+        <span class="step-status">Ожидание</span>
+    </div>
+
+    <div class="step" id="step4">
+        <span class="step-name">🌍 Получение IP</span>
+        <span class="step-status">Ожидание</span>
+    </div>
+
+    <div class="step" id="step5">
+        <span class="step-name">🛡 Итоговое заключение</span>
+        <span class="step-status">Ожидание</span>
+    </div>
+
+    <div class="progress">
+
+        <div class="progress-bar" id="progressBar"></div>
+
+    </div>
+
+</section>
+
+    <section id="mapSection">
+
+        <h2>
+
+            🗺 Карта
+
+        </h2>
+
+        <div id="map"></div>
+
+    </section>
+
+</main>
+
+<footer>
+
+   Лебедев И. · Ознакомительная практика · 2026
+
+</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
